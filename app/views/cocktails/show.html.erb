@@ -3,7 +3,7 @@
 <h4>Ingredients</h4>
 
 <% @cocktail.doses.each do |dose| %>
-  <%= dose.description ingredient.name%>
+  <li><%= dose.description %> <%= ingredient.name %> </li>
 <% end %>
 
 <p><%= link_to 'Change cocktail name', edit_cocktail_path %></p>
@@ -17,3 +17,4 @@
 </p>
 
 <p><%= link_to 'Return to Cocktails', cocktails_path %></p>
+

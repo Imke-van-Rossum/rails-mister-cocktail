@@ -1,0 +1,5 @@
+<h3>Add an Ingredient</h3>
+<%= simple_form_for [cocktail, ingredient] do |f| %>
+  <%= f.input :name%>
+  <%= f.submit class: "btn btn-primary"%>
+<% end %>

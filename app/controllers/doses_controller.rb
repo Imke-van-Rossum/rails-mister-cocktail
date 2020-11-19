@@ -1,5 +1,5 @@
 class DosesController < ApplicationController
-  before_action :set_dose, only: [ :edit, :destroy]
+  before_action :set_dose, only: [:edit, :destroy]
 
   def new
     @cocktail = Cocktail.find(params[:cocktail_id])
@@ -14,23 +14,10 @@ class DosesController < ApplicationController
     @dose.cocktail = @cocktail
     # save it
     if @dose.save
-      redirect_to doses_path(@dose)
+      redirect_to cocktail_path(@cocktail)
     else
       render :new
     end
-  end
-
-  def edit
-    # get the id from the params
-    # find the restaurant with that id
-  end
-
-  def update
-    # find restaurant by its id
-    # update it with data from params
-    # redirect to show page.
-    @dose.update(dose_params)
-    redirect_to dose_path(@dose)
   end
 
   def destroy
@@ -38,7 +25,7 @@ class DosesController < ApplicationController
     # delete it!
     # redirect to index
     @dose.destroy
-    redirect_to doses_path
+    redirect_to dose_path
   end
 
   private
